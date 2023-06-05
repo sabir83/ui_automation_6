@@ -26,6 +26,15 @@ public class _06_WikiTest extends Base {
         WebElement mainHeader = driver.findElement(By.id("firstHeading"));
         Assert.assertEquals(mainHeader.getText(), "Tesla");
     }
+    @Test
+    public void validateWikiSearch2(){
+        WebElement searchBox = driver.findElement(By.id("searchInput"));
 
+        searchBox.sendKeys("Tesla" + Keys.ENTER);
+
+        WebElement mainHeader = driver.findElement(By.cssSelector("#firstHeading>span"));
+
+        Assert.assertEquals(mainHeader.getText(), "Tesla");
+    }
 
 }

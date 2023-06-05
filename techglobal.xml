@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TechGlobal Suite">
+    <test verbose="2" preserve-order="true"
+          name="All TechGlobal Application Tests">
+        <classes>
+            <class name="scripts._03_TGLocatorsTest">
+                <methods>
+                    <include name="validateKiwiParagraph"/>
+                    <include name="validateOrangeParagraph"/>
+                    <include name="validateGrapesParagraph"/>
+                    <include name="validateAllParagraphs"/>
+                    <include name="validateRedAppleLink"/>
+                    <include name="validateAllLink"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_04_TGLocatorsTest.java">
+        <classes>
+            <class name="scripts._04_TGLocatorsTest">
+                <methods>
+                    <include name="validateTheHeader"/>
+                    <include name="languages"/>
+                    <include name="automationTools"/>
+                    <include name="validateListHeaders"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_07_TGDynamicElementsTest.java">
+        <classes>
+            <class name="scripts._07_TGDynamicElementsTest">
+                <methods>
+                    <include name="validateDynamicElements"/>
+                    <include name="validateDynamicElements2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_08_TGWaitsTest.java">
+        <classes>
+            <class name="scripts._08_TGWaitsTest">
+                <methods>
+                    <include name="waitForRedBox"/>
+                    <include name="waitForBlueBox"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_09_TGCheckBoxTest.java">
+        <classes>
+            <class name="scripts._09_TGCheckBoxTest">
+                <methods>
+                    <include name="checkboxTest"/>
+                    <include name="checkboxTest2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_10_TGRadioButtonsTest.java">
+        <classes>
+            <class name="scripts._10_TGRadioButtonsTest">
+                <methods>
+                    <include name="radioButtonsTest"/>
+                    <include name="validatePracticeMore"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_11_TGDropdownsTest.java">
+        <classes>
+            <class name="scripts._11_TGDropdownsTest">
+                <methods>
+                    <include name="productDropdownTest"/>
+                    <include name="productColorTest"/>
+                    <include name="productDeliveryTest"/>
+                    <include name="dropdownTestCase"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_12_TGAlertsTest.java">
+        <classes>
+            <class name="scripts._12_TGAlertsTest">
+                <methods>
+                    <include name="warningAlert"/>
+                    <include name="confirmationAlert"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_13_IFrameTest.java">
+        <classes>
+            <class name="scripts._13_IFrameTest">
+                <methods>
+                    <include name="validateTheParagraph"/>
+                    <include name="validateTheFormSubmission"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_14_MultipleWindowsTest.java">
+        <classes>
+            <class name="scripts._14_MultipleWindowsTest">
+                <methods>
+                    <include name="validateTheAppleNavigation"/>
+                    <include name="validateTheMicrosoftNavigation"/>
+                    <include name="validateTheTeslaNavigation"/>
+                    <include name="validateTheLinkURLs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_15_TGFileUpload.java">
+        <classes>
+            <class name="scripts._15_TGFileUpload">
+                <methods>
+                    <include name="fileUpload"/>
+                    <include name="fileUpload2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_17_TGStaticTableTest.java">
+        <classes>
+            <class name="scripts._17_TGStaticTableTest">
+                <methods>
+                    <include name="validateTableHeader"/>
+                    <include name="validateFirstRow"/>
+                    <include name="validateCountryRow"/>
+                    <include name="validateEachCell"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="/Users/sabirburcu/IdeaProjects/ui_automation_6/src/test/java/scripts/_18_TGSortableTableTest.java">
+        <classes>
+            <class name="scripts._18_TGSortableTableTest">
+                <methods>
+                    <include name="validateSortAscByQuantity"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
