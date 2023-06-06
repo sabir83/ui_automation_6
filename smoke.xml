@@ -6,7 +6,7 @@
         <classes>
             <class name="scripts._01_GoogleTest">
                 <methods>
-                    <include name="validateSearchbar"/>
+                    <include name="validateSearchBar"/>
                 </methods>
             </class>
             <class name="scripts._03_TGLocatorsTest">
