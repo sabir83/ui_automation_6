@@ -2,6 +2,7 @@ package scripts;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -102,13 +103,18 @@ public class Project2 extends Base{
         WebElement forgotPasswordLink = driver.findElement(By.xpath("//button[@type='submit']/..//a"));
         forgotPasswordLink.click();
 
-        WebElement modalSubHeading = driver.findElement(By.id("sub_heading"));
-        Assert.assertTrue(modalSubHeading.isDisplayed());
+        WebElement modal = driver.findElement(By.cssSelector(".modal-card"));
+        Assert.assertTrue(modal.isDisplayed());
 
-        WebElement closeButton = driver.findElement(By.cssSelector(".delete"));
-        closeButton.click();
+        WebElement modalCloseButton = driver.findElement(By.cssSelector(".delete"));
+        modalCloseButton.click();
 
-        Assert.assertFalse(modalSubHeading.isDisplayed()); // gives error
+        // One way to validate the modal is not displayed
+        try{
+            Assert.assertFalse(modal.isDisplayed()); // gives error
+        } catch (StaleElementReferenceException e){
+            Assert.assertTrue(true);
+        }
 
     }
     @Test
