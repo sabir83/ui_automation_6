@@ -3,41 +3,16 @@
 <suite name="Regression">
     <test verbose="2" preserve-order="true" name="All Functionalities">
         <classes>
-            <class name="scripts.Allstate">
-                <methods>
-                    <include name="validateTitleExploreButton"/>
-                    <include name="validateRentersLabel"/>
-                </methods>
-            </class>
-            <class name="scripts.Exercise_Sabir">
-                <methods>
-                    <include name="validateEtsy"/>
-                    <include name="validateEtsy2"/>
-                    <include name="validateEtsy3"/>
-                </methods>
-            </class>
             <class name="scripts._01_GoogleTest">
                 <methods>
                     <exclude name="validateSearchBar"/>
                     <include name="validateTitleAndURL"/>
-                    <include name="validateNavigattion"/>
-                    <include name="validateGoogleSearchButton"/>
+                    <include name="validateNavigation"/>
+                    <include name="validateSearchButton"/>
                 </methods>
             </class>
-            <class name="scripts._01_Project1">
-                <methods>
-                    <include name="validateTheContactUsInformation"/>
-                    <include name="validateTheFullNameInputBox"/>
-                    <include name="validateTheGenderRadioButton"/>
-                    <include name="validateTheAddressInputBox"/>
-                    <include name="validateTheEmailInputBox"/>
-                    <include name="validateThePhoneInputBox"/>
-                    <include name="validateTheMessageTextArea"/>
-                    <include name="validateTheConsentCheckbox"/>
-                    <include name="validateTheSubmitButton"/>
-                    <include name="validateTheFormSubmission"/>
-                </methods>
-            </class>
+            <class name="scripts._01_Project1"/>
+            <class name="scripts._02_Project2"/>
             <class name="scripts._02_AppleTest">
                 <methods>
                     <include name="validateTitleAndURL"/>
@@ -50,14 +25,14 @@
                     <include name="validateGrapesParagraph"/>
                     <exclude name="validateAllParagraphs"/>
                     <include name="validateRedAppleLink"/>
-                    <include name="validateAllLink"/>
+                    <include name="validateAllLinks"/>
                 </methods>
             </class>
             <class name="scripts._04_TGLocatorsTest">
                 <methods>
                     <include name="validateTheHeader"/>
-                    <include name="languages"/>
-                    <include name="automationTools"/>
+                    <include name="validateLanguages"/>
+                    <include name="validateAutomationTools"/>
                     <include name="validateListHeaders"/>
                 </methods>
             </class>
@@ -69,14 +44,15 @@
             </class>
             <class name="scripts._06_WikiTest">
                 <methods>
-                    <exclude name="validateWikiSearch"/>
+                    <exclude name="validateWikiSearch1"/>
                     <include name="validateWikiSearch2"/>
                 </methods>
             </class>
             <class name="scripts._07_TGDynamicElementsTest">
                 <methods>
-                    <include name="validateDynamicElements"/>
-                    <include name="validateDynamicElements2"/>
+                    <include name="validateDynamicElementBox1"/>
+                    <include name="validateDynamicElementBox2"/>
+                    <include name="validateDynamicElementBoxes"/>
                 </methods>
             </class>
             <class name="scripts._08_TGWaitsTest">
@@ -127,15 +103,14 @@
             </class>
             <class name="scripts._15_TGFileUpload">
                 <methods>
-                    <include name="fileUpload"/>
-                    <include name="fileUpload2"/>
+                    <include name="basicFileUpload"/>
                 </methods>
             </class>
             <class name="scripts._17_TGStaticTableTest">
                 <methods>
                     <include name="validateTableHeader"/>
                     <include name="validateFirstRow"/>
-                    <include name="validateCountryRow"/>
+                    <include name="validateLastColumn"/>
                     <include name="validateEachCell"/>
                 </methods>
             </class>
@@ -144,6 +119,7 @@
                     <include name="validateSortAscByQuantity"/>
                 </methods>
             </class>
+            <class name="scripts._19_TGActionsTest"/>
         </classes>
     </test>
 </suite>

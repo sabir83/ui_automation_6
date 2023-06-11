@@ -1,6 +1,7 @@
 package scripts;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -8,27 +9,30 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.Waiter;
 
-public class _19_TGActionsTest extends Base{
+import java.time.Duration;
+
+public class _19_TGActionsTest extends Base {
     @BeforeMethod
     public void setPage() {
         driver.get("https://techglobal-training.com/frontend");
         driver.findElement(By.id("card-15")).click();
         actions = new Actions(driver);
     }
+
     /**
-     Go to https://techglobal-training.com/frontend/
-     Click on the "Actions" card
-     Verify that the user is redirected to the Actions page
-     Verify that the first three web elements are present and labeled as "Click on me", "Right-Click on me", and "Double-Click on me"
-     Perform a click action on the first web element labeled "Click on me"
-     Verify that a message appears next to the element stating, "You clicked on a button!"
-     Perform a right-click action on the second web element labeled "Right-Click on me"
-     Verify that the message appears next to the element stating, "You right-clicked on a button!"
-     Perform a double-click action on the third web element labeled "Double-Click on me"
-     Verify that the message appears next to the element stating, "You double-clicked on a button!"
+     * Go to https://techglobal-training.com/frontend/
+     * Click on the "Actions" card
+     * Verify that the user is redirected to the Actions page
+     * Verify that the first three web elements are present and labeled as "Click on me", "Right-Click on me", and "Double-Click on me"
+     * Perform a click action on the first web element labeled "Click on me"
+     * Verify that a message appears next to the element stating, "You clicked on a button!"
+     * Perform a right-click action on the second web element labeled "Right-Click on me"
+     * Verify that the message appears next to the element stating, "You right-clicked on a button!"
+     * Perform a double-click action on the third web element labeled "Double-Click on me"
+     * Verify that the message appears next to the element stating, "You double-clicked on a button!"
      */
     @Test
-    public void mouseAction(){
+    public void mouseAction() {
         //actions.moveToElement(driver.findElement(By.id(""))).contextClick(); //contextclick-right click
         WebElement clickOnMeButton = driver.findElement(By.id("click"));
         WebElement rightClickButton = driver.findElement(By.id("right-click"));
@@ -65,9 +69,9 @@ public class _19_TGActionsTest extends Base{
         WebElement dragElementButton = driver.findElement(By.id("drag_element"));
         WebElement dropElementButton = driver.findElement(By.id("drop_element"));
 
-//        actions.dragAndDrop(dragElementButton, dropElementButton).perform();
+        actions.dragAndDrop(dragElementButton, dropElementButton).perform();
 
-        actions.moveToElement(dragElementButton).clickAndHold().moveToElement(dropElementButton).release().perform();
+        // 2nd way//actions.moveToElement(dragElementButton).clickAndHold().moveToElement(dropElementButton).release().perform();
 
         WebElement dragAndDropResult = driver.findElement(By.id("drag_and_drop_result"));
 
@@ -78,4 +82,53 @@ public class _19_TGActionsTest extends Base{
         Waiter.pause(3);
     }
 
+    @Test
+    public void keyboardActions() {
+        /**
+         Go to https://techglobal-training.com/frontend/
+         Click on the "Actions" card
+         Go to the input box, and remove if there is an existing text inside
+         First, enter “h” to the input box in upper case using keyboard actions
+         Then complete the word by sending “ello” as a key
+         Validate value attribute of the input box is “Hello”
+         */
+
+        WebElement inputBox = driver.findElement(By.id("input_box"));
+
+        actions.keyDown(Keys.SHIFT).sendKeys(inputBox, "h")
+                .keyUp(Keys.SHIFT)
+                .pause(Duration.ofSeconds(2))
+                .sendKeys("ello")
+                .perform();
+
+        Waiter.pause(3);
+
+        Assert.assertEquals(inputBox.getAttribute("value"), "Hello");
+
+
     }
+    @Test
+    public void copyPaste(){
+        /**
+        Go to https://techglobal-training.com/frontend/
+        Click on the "Actions" card
+        Go to the input box, and remove if there is an existing text inside
+        Enter “techglobal” to input the box with uppercases
+        Then, copy the text and paste it again
+        Validate the value attribute for the search input box is “TECHGLOBALTECHGLOBAL”
+         */
+        WebElement inputBox = driver.findElement(By.id("input_box"));
+        inputBox.clear();
+
+        actions.keyDown(Keys.SHIFT).sendKeys(inputBox, "techglobal")
+                .keyUp(Keys.SHIFT)
+                .keyDown(Keys.COMMAND)
+                .sendKeys( "acvv")
+                .perform();
+        Waiter.pause(3);
+
+        Assert.assertEquals(inputBox.getAttribute("value"), "TECHGLOBALTECHGLOBAL");
+
+    }
+
+}
