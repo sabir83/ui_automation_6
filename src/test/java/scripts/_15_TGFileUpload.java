@@ -16,7 +16,7 @@ public class _15_TGFileUpload extends Base{
     @Test
     public void fileUpload(){
         WebElement fileUploadButton = driver.findElement(By.id("file_upload"));
-        fileUploadButton.sendKeys("C:Users\\Chait\\Desktop\\Files\\Job Specification.txt");
+        fileUploadButton.sendKeys("/Users/sabirburcu/Desktop/UI Automation.docx");
 
         WebElement uploadButton = driver.findElement(By.id("file_submit"));
         uploadButton.click();

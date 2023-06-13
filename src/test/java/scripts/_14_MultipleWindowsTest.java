@@ -105,19 +105,32 @@ public class _14_MultipleWindowsTest extends Base{
     public void validateTheLinkURLs(){
 
         List<WebElement> links = driver.findElements(By.cssSelector(".MultipleWindows_link__JB372"));
-        String[] expectedURLs = {"https://www.apple.com/", "https://www.microsoft.com/en-us/", "https://www.tesla.com/"};
+        String[] expectedUrls = {"https://www.apple.com/","https://www.microsoft.com/en-us/", "https://www.tesla.com/"};
 
-        for (int i = 0; i < expectedURLs.length; i++) {
+        for (int i = 0; i < expectedUrls.length; i++) {
             links.get(i).click();
-
             WindowHandler.switchToChildWindow();
-            Assert.assertEquals(driver.getCurrentUrl(), expectedURLs[i]);
+            Assert.assertEquals(driver.getCurrentUrl(), expectedUrls[i]);
             driver.close();
             WindowHandler.switchToMainWindow();
+        }
+
+
+
+      // List<WebElement> links = driver.findElements(By.cssSelector(".MultipleWindows_link__JB372"));
+      // String[] expectedURLs = {"https://www.apple.com/", "https://www.microsoft.com/en-us/", "https://www.tesla.com/"};
+
+      // for (int i = 0; i < expectedURLs.length; i++) {
+      //     links.get(i).click();
+
+      //     WindowHandler.switchToChildWindow();
+      //     Assert.assertEquals(driver.getCurrentUrl(), expectedURLs[i]);
+      //     driver.close();
+      //     WindowHandler.switchToMainWindow();
 
         }
 
     }
 
 
-}
+

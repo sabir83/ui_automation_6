@@ -25,7 +25,7 @@ Select "JavaScript" to validate it is selected but the other 2 are deselected
     @Test
     public static void radioButtonsTest() {
         List<WebElement> buttonLabels = driver.findElements(By.cssSelector("#radio-button-group_1 label"));
-        List<WebElement> buttonInput = driver.findElements(By.cssSelector("#radio-button-group_1 input"));
+        List<WebElement> buttonInput = driver.findElements(By.cssSelector("input[id*='radio_1_option']"));
 
         for (WebElement element : buttonInput) {
             Assert.assertTrue(element.isDisplayed());

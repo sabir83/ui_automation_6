@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.DropdownHandler;
+import utils.Waiter;
 
 
 import java.util.List;
@@ -44,7 +45,8 @@ public class _11_TGDropdownsTest extends Base{
         @Test
         public void productColorTest(){
             WebElement dropdown = driver.findElement(By.id("color_dropdown"));
-            DropdownHandler.selectByIndex(dropdown, 2);
+            DropdownHandler.selectByIndex(dropdown, 2); // Green
+
         }
 
         @Test

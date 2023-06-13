@@ -27,7 +27,7 @@ public class _17_TGStaticTableTest extends Base{
      */
     @Test
     public void validateTableHeader(){
-        List<WebElement> headers = driver.findElements(By.cssSelector(".header"));
+        List<WebElement> headers = driver.findElements(By.cssSelector("tr:nth-child(1) th"));
         String[] expectedHeaders ={"Rank", "Company", "Employees","Country"};
 
         for (int i = 0; i < expectedHeaders.length; i++) {

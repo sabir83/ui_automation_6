@@ -89,5 +89,27 @@ public class _12_TGAlertsTest extends Base{
     Click on the "OK" button on the alert
     Validate the result message equals "You entered "Hello" in the alert and clicked OK."
      */
+    @Test
+    public void promptAlert(){
+        WebElement promptAlert = driver.findElement(By.id("prompt_alert"));
+        promptAlert.click();
+
+        Alert alert = driver.switchTo().alert();
+
+        Assert.assertEquals(alert.getText(), "What would you like to say to TechGlobal?");
+        alert.dismiss();
+
+        WebElement resultAlert = driver.findElement(By.id("action"));
+        Assert.assertEquals(resultAlert.getText(), "You rejected the alert by clicking Cancel.");
+
+        promptAlert.click();
+        AlertHandler.acceptAlert();
+        Assert.assertEquals(resultAlert.getText(), "You entered \"\" in the alert and clicked OK.");
+
+        promptAlert.click();
+        alert.sendKeys("Hello");
+        AlertHandler.acceptAlert();
+        Assert.assertEquals(resultAlert.getText(), "You entered \"Hello\" in the alert and clicked OK.");
+    }
 
 }

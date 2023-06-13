@@ -29,7 +29,7 @@ public class _21_EtsyTest extends Base {
                 "Gifts & Gift Cards"};
         // System.out.println(etsyHomePage.headerItems.size()); // 9
 
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < expectedHeaderItemsText.length; i++) {
             Assert.assertTrue(etsyHomePage.headerItems.get(i).isDisplayed());
             Assert.assertEquals(etsyHomePage.headerItems.get(i).getText(), expectedHeaderItemsText[i]);
 

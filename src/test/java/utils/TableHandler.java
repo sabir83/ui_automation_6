@@ -17,7 +17,7 @@ public class TableHandler {
     }
 
     public static List<List<WebElement>> getTableData(WebElement table){
-        // Create anew list of lists to hold table data
+        // Create a new list of lists to hold table data
         // Each inner list represents one row of the table
         List<List<WebElement>> tableData = new ArrayList<>();
         // [ 1,	Amazon,	1,523,000,	USA ]

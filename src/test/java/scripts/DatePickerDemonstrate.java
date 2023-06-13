@@ -16,7 +16,7 @@ public class DatePickerDemonstrate extends Base{
         actions = new Actions(driver);
     }
     @Test
-    public void dataPickerSendKeysExample(){
+    public void datePickerSendKeysExample(){
         WebElement month = driver.findElement(By.name("month"));
         WebElement day = driver.findElement(By.name("day"));
         WebElement year = driver.findElement(By.name("year"));
